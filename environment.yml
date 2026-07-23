@@ -1,0 +1,15 @@
+name: test-era5
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - matplotlib
+  - xarray
+  - cartopy
+  - nc-time-axis
+  - arraylake
+  - dask
+  - pip
+  - pip:
+    - pcodec
