@@ -37,7 +37,7 @@ start_time = time.perf_counter()
 
 ds_temporal = xr.open_zarr(session.store, group="single/temporal", chunks=None)
 
-msl_temporal = ds_spatial.msl.sel(valid_time=interval).mean(dim="valid_time").load()
+msl_temporal = ds_temporal.msl.sel(valid_time=interval).mean(dim="valid_time").load()
 
 end_time = time.perf_counter()
 execution_time = end_time - start_time
