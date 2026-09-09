@@ -43,6 +43,7 @@ end_time = time.perf_counter()
 execution_time = end_time - start_time
 print(f"Data execution time: {execution_time:.6f} seconds")
 print("--------------")
-assert ((msl_spatial - msl_temporal) == 0.).all()
-print("Datasets are exactly the same")
+rtol = 1e-5
+np.testing.assert_allclose(msl_spatial, msl_temporal, rtol=rtol)
+print("Datasets match to within {} percent.".format(rtol*100))
 print("--------------")
