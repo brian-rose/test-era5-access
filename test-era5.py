@@ -24,7 +24,7 @@ interval = slice("2024-01","2024-03")
 print("Starting our data test: spatial")
 start_time = time.perf_counter()
 
-ds_spatial = xr.open_zarr(session.store, group="single/spatial", chunks=None)
+ds_spatial = xr.open_zarr(session.store, group="single/spatial", chunks={})
 
 msl_spatial = ds_spatial.msl.sel(valid_time=interval).mean(dim="valid_time").load()
 
@@ -35,7 +35,7 @@ print("--------------")
 print("Starting next data test: temporal")
 start_time = time.perf_counter()
 
-ds_temporal = xr.open_zarr(session.store, group="single/temporal", chunks=None)
+ds_temporal = xr.open_zarr(session.store, group="single/temporal", chunks={})
 
 msl_temporal = ds_temporal.msl.sel(valid_time=interval).mean(dim="valid_time").load()
 
