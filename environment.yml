@@ -8,8 +8,11 @@ dependencies:
   - xarray
   - cartopy
   - nc-time-axis
+  - jupyter
   - arraylake
   - dask
+  - dask-cloudprovider
+  - awscli
   - pip
   - pip:
     - pcodec
